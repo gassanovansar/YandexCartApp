@@ -1,11 +1,14 @@
 package com.example.yandexcartapp.uikit.designe
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
@@ -31,21 +34,36 @@ fun PrimaryButton(
             contentColor = Color.White,
             disabledBackgroundColor = AppTheme.colors.yellow
         ),
-        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 14.dp),
-        shape = RoundedCornerShape(8.dp),
+        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 18.dp),
+        shape = RoundedCornerShape(16.dp),
         elevation = ButtonDefaults.elevation(0.dp, 0.dp, 0.dp, 0.dp, 0.dp),
     ) {
-        leftContent()
+        Box(modifier = Modifier
+            .fillMaxWidth()
+            .weight(1f)) {
+            Box(modifier = Modifier.align(Alignment.CenterEnd)) {
+                leftContent()
+            }
+        }
         Text(
             maxLines = 1,
-            modifier = Modifier,
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f),
             text = text,
-            style = AppTheme.typography.semiBold.copy(
-                fontSize = 16.sp,
-                color = if (enabled) AppTheme.colors.yellow else AppTheme.colors.yellow,
+            style = AppTheme.typography.bold.copy(
+                fontSize = 18.sp,
+                color = if (enabled) AppTheme.colors.black else AppTheme.colors.black,
                 textAlign = TextAlign.Center,
             )
         )
-        rightContent()
+        Box(modifier = Modifier
+            .fillMaxWidth()
+            .weight(1f)) {
+            Box(modifier = Modifier.align(Alignment.CenterEnd)) {
+                rightContent()
+            }
+
+        }
     }
 }

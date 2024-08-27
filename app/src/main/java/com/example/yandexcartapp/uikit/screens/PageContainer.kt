@@ -24,7 +24,7 @@ import com.example.yandexcartapp.uikit.theme.AppTheme
 @Composable
 fun PageContainer(
     modifier: Modifier = Modifier,
-    background: Color = AppTheme.colors.white,
+    background: Color = AppTheme.colors.gray,
     brush: Brush? = null,
     fill: Boolean = true,
     isLoading: State<Boolean> = mutableStateOf(false),

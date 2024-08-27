@@ -3,14 +3,16 @@ package com.example.yandexcartapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
+import com.example.yandexcartapp.feature.cart.CartScreen
+import com.example.yandexcartapp.uikit.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-
+            AppTheme {
+                CartScreen()
+            }
         }
     }
 }
