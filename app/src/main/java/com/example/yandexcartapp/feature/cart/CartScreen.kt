@@ -1,6 +1,5 @@
 package com.example.yandexcartapp.feature.cart
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -13,12 +12,11 @@ import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.yandexcartapp.R
 import com.example.yandexcartapp.uikit.components.CartItem
 import com.example.yandexcartapp.uikit.designe.AppCard
+import com.example.yandexcartapp.uikit.designe.BackIcon
 import com.example.yandexcartapp.uikit.designe.PrimaryButton
 import com.example.yandexcartapp.uikit.designe.Toolbar
 import com.example.yandexcartapp.uikit.screens.PageContainer
@@ -31,10 +29,7 @@ fun CartScreen() {
             Toolbar(
                 modifier = Modifier.background(AppTheme.colors.white),
                 leftIcon = {
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_back),
-                        contentDescription = ""
-                    )
+                    BackIcon()
                 },
             )
         },

@@ -80,15 +80,11 @@ fun Toolbar(
 }
 
 @Composable
-fun BackIcon(modifier: Modifier = Modifier, onClick: (() -> Unit)? = null) {
-//    val navigator = LocalNavigator.currentOrThrow
+fun BackIcon(modifier: Modifier = Modifier) {
     Image(
         painter = painterResource(id = R.drawable.ic_back),
         contentDescription = null,
         modifier = modifier.clickableRound(32.dp) {
-//            if (onClick == null)
-//                navigator.pop()
-//            else onClick()
         }
     )
 }
