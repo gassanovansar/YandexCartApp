@@ -12,6 +12,7 @@ import androidx.compose.ui.text.style.BaselineShift
 import androidx.compose.ui.text.style.LineHeightStyle
 import com.example.yandexcartapp.R
 import com.example.yandexcartapp.uikit.theme.typography.BaseTypography
+import com.example.yandexcartapp.uikit.theme.typography.TextStyleBold
 import com.example.yandexcartapp.uikit.theme.typography.TextStyleMedium
 import com.example.yandexcartapp.uikit.theme.typography.TextStyleRegular
 import com.example.yandexcartapp.uikit.theme.typography.TextStyleSemiBold
@@ -20,6 +21,7 @@ object AppFonts {
     val regular: BaseTypography = TextStyleRegular(FontFamily(Font(R.font.regular)))
     val medium: BaseTypography = TextStyleMedium(FontFamily(Font(R.font.medium)))
     val semiBold: BaseTypography = TextStyleSemiBold(FontFamily(Font(R.font.semibold)))
+    val bold: BaseTypography = TextStyleBold(FontFamily(Font(R.font.bold)))
 }
 
 
@@ -27,6 +29,7 @@ class AppTypography(
     val regular: TextStyle,
     val medium: TextStyle,
     val semiBold: TextStyle,
+    val bold: TextStyle,
 )
 
 
@@ -36,6 +39,7 @@ fun textStyles(): AppTypography {
         regular = AppFonts.regular.getComposeTextStyle(),
         medium = AppFonts.medium.getComposeTextStyle(),
         semiBold = AppFonts.semiBold.getComposeTextStyle(),
+        bold = AppFonts.bold.getComposeTextStyle(),
     )
 }
 
@@ -61,7 +65,7 @@ fun BaseTypography.getComposeTextStyle(): TextStyle {
     return toTextStyle(this)
 }
 
- val LocalTypography = compositionLocalOf<AppTypography> {
+val LocalTypography = compositionLocalOf<AppTypography> {
     error(
         "No typography provided! Make sure to wrap all usages of components in a " +
                 "AppTheme."
